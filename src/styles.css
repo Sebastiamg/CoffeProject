@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+/* TailWind dependences imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----fonts imports---- */
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Sawarabi+Mincho&display=swap');
+/* Satisfy */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+img {
+    width: 100%;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #79543c;
+    border-radius: 20px;
+}

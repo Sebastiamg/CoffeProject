@@ -1,0 +1,14 @@
+<div class="my-10">
+    <form (submit)="registerUser($event)">
+        <label class="border-2 border-black" for="name">Name:</label>
+        <input class="border-2 border-black" type="text" name="name" [(ngModel)]="newUser.name">
+        <label class="border-2 border-black" for="email">email:</label>
+        <input class="border-2 border-black" type="email" name="email" [(ngModel)]="newUser.email">
+        <label class="border-2 border-black" for="password">Password:</label>
+        <input class="border-2 border-black" type="password" name="password" [(ngModel)]="newUser.password">
+        <button class="border-2 border-black" type="submit" >Register</button>
+    </form>
+</div>
+
+
+

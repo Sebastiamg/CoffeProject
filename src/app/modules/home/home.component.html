@@ -1,0 +1,26 @@
+<div class="border-2 font-Satisfy w-fullp-0 m-0">
+    <!-- home screen -->
+    <div class="w-full flex h-screen text-choc1">
+        <!-- home left -->
+            <div class="w-1/2 h-screen flex flex-col place-content-start">
+                <!-- phrase -->
+                <div class="w-4/5 text-7xl text-start font-bold mx-auto my-16">
+                    <span>Comierza tu día con un café negro</span>
+                </div>
+                <!-- buy now button -->
+                <div class="w-4/5 font-bold text-2xl mx-auto" id="buyNow">
+                    <button class="border-4 border-choc2 p-1 rounded-3xl w-2/5 bg-crem4 hover:bg-choc3 transition-all shadow-md shadow-choc1" (click)="scrollDown()">Comprar Ahora</button>
+                </div>  
+        </div>
+        <!-- home right -->
+        <div class="w-1/2">
+            <div class="relative w-4/5 h-4/5 overflow-hidden">
+                <img class="absolute -top-32" src="../../../assets/images/coffeeCoup.png" alt="coffeeCoup">
+            </div>
+        </div>
+    </div>
+    <!-- slider -->
+    <div>
+        <app-slider></app-slider>
+    </div>
+</div>

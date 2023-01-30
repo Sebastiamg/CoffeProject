@@ -1,0 +1,19 @@
+<div class="bg-choc3 flex flex-wrap justify-evenly">
+    <div class="container" *ngFor="let item of allProducts" style="background-image: url('{{item.image}}')">
+        <div class="overlay">
+          <div class = "items"></div>
+          <div class = "items head">
+            <p>{{item.name}}</p>
+            <hr>
+          </div>
+          <div class = "items price">
+            <p class="old">{{item.description}}</p>
+            <p class="new">${{item.price}}</p>
+          </div>
+          <div class="items cart">
+            <i class="fa fa-shopping-cart"></i>
+            <span>Comprar</span>
+        </div>
+      </div>
+      </div>
+</div>
