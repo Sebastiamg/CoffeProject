@@ -6,6 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from 'src/app/shared/layout/layout.component';
 import { FormsModule } from '@angular/forms';
 import { CreateItemsModule } from './create-items/create-items.module';
+import { BreadsComponent } from './breads/breads.component';
+import { DrinksComponent } from './drinks/drinks.component';
+import { DessertsComponent } from './desserts/desserts.component';
 
 const routes: Routes = [
   {
@@ -17,6 +20,18 @@ const routes: Routes = [
         component: CatalogComponent
       },
       {
+        path: 'breads',
+        component: BreadsComponent
+      },
+      {
+        path: 'drinks',
+        component: DrinksComponent
+      },
+      {
+        path: 'desserts',
+        component: DessertsComponent
+      },
+      {
         path: 'create',
         component: CreateItemsComponent
       }
@@ -26,7 +41,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [CatalogComponent],
+  declarations: [CatalogComponent, BreadsComponent, DrinksComponent, DessertsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

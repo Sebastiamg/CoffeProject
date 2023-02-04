@@ -45,7 +45,8 @@ export class CreateItemsComponent {
       this.allProducts.push(data)
       this.isUpdating = false;
       return this.productService.createProduct(data).subscribe(res => {
-        console.log(res)
+        console.log(res);
+        (e.target as HTMLFormElement).reset()
         this.getAllItems()
       })
     }
@@ -99,9 +100,6 @@ export class CreateItemsComponent {
     // item Id
     const itemId = Number((e.target as HTMLElement).id)
     this.newUpdateItem.id = itemId;
-
-    console.log(cardInfo)
-
   }
 
   // EDIT ONE PRODUCT
@@ -125,8 +123,9 @@ export class CreateItemsComponent {
         return console.log("llena todo bien para actualziar")
       } else { 
         return this.productService.updateProduct(uptId, this.newUpdateItem).subscribe(res => {
-          console.log(res)
-          this.getAllItems()
+          console.log(res);
+          this.getAllItems();
+          (e.target as HTMLFormElement).reset();
         })
       }
   }

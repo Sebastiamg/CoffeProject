@@ -1,0 +1,106 @@
+.formu-login {
+    width: 250px;
+    height: 240px;
+    background-color: #8a6141;
+    border: 3px solid #201310;
+    margin: 0 auto;
+    padding: 12px;
+    border-radius: 10px;
+    transform: translate(0, 50%);
+}
+
+.formu-register {
+    width: 250px;
+    height: 295px;
+    background-color: #8a6141;
+    border: 3px solid #201310;
+    margin: 0 auto;
+    padding: 12px;
+    border-radius: 10px;
+    transform: translate(0, 35%);
+}
+
+label {
+    font-weight: bold;
+}
+
+#email {
+    margin-bottom: 5px;
+}
+
+#email, #password, #name {
+    background-color: #d1bba4;
+    border: 2px solid #201310;
+    border-radius: 8px;
+    width: 100%;
+    color: black;
+    font-weight: bold;
+    padding: 3px;
+}
+
+a {
+    color: #201310;
+}
+
+.links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a:hover {
+    color: #d1bba4;
+}
+
+.btns {
+    display: flex;
+    width: 100%;
+}
+
+.btn-izquierda {
+    width: 48%;
+}
+
+.btn-derecha {
+    margin-left: 4%;
+    width: 48%;
+}
+
+.btn-login {
+    background-color: #4b3024;
+    border: 2px solid #201310;
+    color: #d1bba4;
+    padding: 2px;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: #201310;
+    transition: all .3s;
+}
+
+.btn-login:active {
+    background-color: #4b3024;
+}
+
+.btn-atras {
+    background-color: #4b3024;
+    border: 2px solid #201310;
+    color: #d1bba4;
+    padding: 2px;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-atras:hover {
+    background-color: #201310;
+    transition: all .3s;
+}
+
+.btn-atras:active {
+    background-color: #4b3024;
+}

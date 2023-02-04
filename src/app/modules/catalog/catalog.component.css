@@ -1,7 +1,8 @@
-body {
-    background-color: #FEF5DF;
-  }
-  
+.Catalog{ 
+  background: rgb(209,187,164);
+  background: linear-gradient(180deg, rgba(209,187,164,1) 0%, rgba(163,125,89,1) 100%);
+} 
+
   .container {
     width: 300px;
     height: 400px;

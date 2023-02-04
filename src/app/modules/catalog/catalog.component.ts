@@ -12,11 +12,37 @@ export class CatalogComponent {
   
   protected allProducts: ProductEntity[] = []
 
+  // Get an filter all products
+  protected drinks: ProductEntity[] = []
+  protected breads: ProductEntity[] = []
+  protected desserts: ProductEntity[] = []
+
   getAllProducts() {
     return this.productService.getAllProducts().subscribe(res => {
-      console.log(Object.values(res))
+      // console.log(Object.values(res))
+
         Object.values(res).forEach(x => {
-          this.allProducts.push(x)
+          // this.allProducts.push(x)
+          // console.log(x.category)
+
+          const category = x.category;
+          switch (category) {
+            case "pan":
+              this.breads.push(x)
+              break;
+
+            case "bebidas":
+              this.drinks.push(x)
+              break;
+              
+            case "postres":
+              this.desserts.push(x)
+              break;
+            default:
+              console.log("Switch ERROR")
+              break;
+          }
+
         })
     })
   }

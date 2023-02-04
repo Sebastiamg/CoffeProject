@@ -1,6 +1,6 @@
-<div class="border-2 font-Satisfy w-fullp-0 m-0">
+<div class="font-Satisfy w-full p-0 m-0">
     <!-- home screen -->
-    <div class="w-full flex h-screen text-choc1">
+    <div class="w-full flex h-screen text-choc1 bgContainer">
         <!-- home left -->
             <div class="w-1/2 h-screen flex flex-col place-content-start">
                 <!-- phrase -->
@@ -22,5 +22,37 @@
     <!-- slider -->
     <div>
         <app-slider></app-slider>
+    </div>
+    <div class="flex w-full pb-60 justify-center">
+
+        <div class="contenedor-item">
+            <p class="text-center text-4xl text-crema mb-10">Bebidas</p>
+            <img id="cat" src="https://github.com/Joel7Anthony/CAFE-OH-LA-LA/blob/main/CafeOhLaLa/src/assets/img/drink/cafelate.jpg?raw=true" alt="" class="contenedor-img">
+            <div class="contenedor-text">
+                <div class="izquierda-contenedor-text">
+                    <a [routerLink]="['/menu/drinks']" class="title"><h2 class="title">Ver</h2></a>
+                </div>
+            </div>
+        </div>
+  
+        <div class="contenedor-item">
+            <p class="text-center text-4xl text-crema mb-10 ">Panes</p>
+            <img id="cat" src="https://github.com/Joel7Anthony/CAFE-OH-LA-LA/blob/main/CafeOhLaLa/src/assets/img/bread/pan.jpg?raw=true" alt="" class="contenedor-img">
+            <div class="contenedor-text">
+                <div class="izquierda-contenedor-text">
+                    <a [routerLink]="['/menu/breads']"><h2 class="title">Ver</h2></a>
+                </div>
+            </div>
+        </div>
+  
+        <div class="contenedor-item">
+            <p class="text-center text-4xl text-crema mb-10 ">Postres</p>
+            <img id="cat" src="https://github.com/Joel7Anthony/CAFE-OH-LA-LA/blob/main/CafeOhLaLa/src/assets/img/postre5.jpg?raw=true" alt="" class="contenedor-img">
+            <div class="contenedor-text">
+                <div class="izquierda-contenedor-text">
+                    <a [routerLink]="['/menu/desserts']"><h2 class="title">Ver</h2></a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -8,19 +8,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './modules/auth/register/register.component';
 import { LoginComponent } from './modules/auth/login/login.component';
+import { CreateUsersModule } from './modules/user/create-users/create-users.module';
+import { UserProfileModule } from './modules/user/user-profile/user-profile.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CreateUsersModule,
+    UserProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]

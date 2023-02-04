@@ -1,0 +1,66 @@
+<div class="flex">
+    <div class="my-10 w-2/5">
+        <form (submit)="createUser()" class="flex flex-col w-3/5 mx-auto border-4 border-choc1 rounded-lg font-bold p-2 bg-choc3" id="createForm">
+            <!-- name -->
+            <label for="name">Nombre del usuario:</label>
+            <input class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" type="text" name="name" [(ngModel)]="newUser.name">
+            
+            <!-- email -->
+            <label for="email">Correo electrónico del usuario</label>
+            <input class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" type="email" name="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" [(ngModel)]="newUser.email">
+    
+            <!-- password -->
+            <label for="password">Contraseña del usuario:</label>
+            <input class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" type="text" name="password" [(ngModel)]="newUser.password">
+    
+            <!-- role -->
+            <label for="role">Rol del usuario:</label>
+            <select class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" type="text" name="role" [(ngModel)]="newUser.profile.role">
+                <!-- category options -->
+                <option class="font-bold text-choc1" value="" selected></option>
+                <option class="font-bold text-choc1" value="admin">Administrador</option>
+                <option class="font-bold text-choc1" value="user">Usuario</option>
+            </select>
+    
+            <!-- user photo -->
+            <label for="photo">Foto:</label>
+            <textarea class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none h-14" type="text" name="photo" [(ngModel)]="newUser.profile.photo"></textarea>
+    
+            <button class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-choc2 text-crem1 hover:bg-choc1 transition-all" type="submit" id="submitButton">Crear Usuario</button>
+        </form>
+    </div>
+    <!-- users list  -->
+        <div class="w-3/4 h-1/5 my-5 flex flex-wrap justify-start">
+        <!-- user card -->
+        <div *ngFor="let user of users" class="border-4 border-choc1 m-4 w-2/5 h-28 bg-crem1 flex justify-between rounded-lg relative">
+            <!-- photo -->
+            <div class="w-2/5 h-full bg-crem2">
+                <img src="{{user.profile.photo}}" alt="userPhoto" class="rounded-lg p-1 h-full">
+            </div>
+            <!-- info -->
+            <div class="w-3/5 p-2 font-bold overflow-hidden">
+                <p>ID: {{user.id}}</p>
+                <p>{{user.name}}</p>
+                <p>{{user.status == true ? "Activo": "Inactivo"}}</p>
+            </div>
+            <!-- buttons -->
+            <div class="font-bold text-center">
+                <button class="bg-choc3 hover:bg-choc1 transition-all text-crem1 w-full bottom-0 h-1/2 p-1" (click)="showInfo(true, user.name+user.id)">Info</button>
+                <button class="bg-choc2 hover:bg-choc1 transition-all text-crem1 w-full bottom-0 h-1/2 p-1" (click)="deleteUser(user.id)">Eliminar</button>
+            </div>
+            <!-- all user info -->
+            <div class="w-full h-full bg-crem4 font-bold flex allInfo" id="{{user.name}}{{user.id}}">
+                <div class="w-5/6 p-2">
+                    <p>Nombre: <span class="font-normal">{{user.name}} {{user.profile.surname}}</span></p>
+                    <p>Email: <span class="font-normal">{{user.email}}</span></p>
+                    <p>Rol: <span class="font-normal">{{user.profile.role}}</span></p>
+                    <p>Telf: <span class="font-normal">{{user.profile.phone}}</span></p>
+                </div>
+                <!-- close button -->
+                <div class="w-1/6">
+                    <button class="bg-choc2 hover:bg-choc1 transition-all text-crem1 w-full bottom-0 h-full" (click)="showInfo(false, user.name+user.id)">Info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

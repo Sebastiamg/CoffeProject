@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  protected route = window.location.href.search("/auth") === -1
+
 }

@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateItemsComponent } from './create-items.component';
+import { UserProfileComponent } from './user-profile.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [CreateItemsComponent],
+  declarations: [UserProfileComponent],
   imports: [
     CommonModule,
     FormsModule
   ],
   exports: [
-    CreateItemsComponent
+    UserProfileComponent
   ]
 })
-export class CreateItemsModule { }
+export class UserProfileModule { }

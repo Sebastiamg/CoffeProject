@@ -1,20 +1,27 @@
-<div class="font-Satisfy flex justify-between p-5 w-full">
+<div class="font-Satisfy flex justify-between p-4 w-full" *ngIf="route" id="navBar">
 
     <!-- menu -->
-    <div class="w-1/3 flex items-center">
-        <div class="w-full pl-5">
-            <svg class="bg-crem4 rounded-xl p-2 outline outline-4 outline-choc2 hover:cursor-pointer shadow-md shadow-choc1" width='50' height='50' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='40' height='40' stroke='none' fill='#000000' opacity='0'/>
+    <div class="w-1/3 flex items-center relative">
+        <div class="w-full pl-5" (mouseleave)="hideMenu()" >
+            <svg (mouseenter)="showMenu()" class="bg-crem4 rounded-xl p-2 outline outline-4 outline-choc2 hover:cursor-pointer shadow-md shadow-choc1 navMenu" width='50' height='50' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='40' height='40' stroke='none' fill='#000000' opacity='0'/>
                 <g transform="matrix(0.4 0 0 0.4 12 12)" >
                 <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" translate(-25, -25)" d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z" stroke-linecap="round" />
                 </g>
             </svg>
+        </div>
+        <div (mouseenter)="showMenu()" (mouseleave)="hideMenu()" class="absolute border-4 border-choc2 rounded-xl w-56 h-fit left-20 top-3 flex flex-col text-center items-center bg-crem1 font-bold text-lg text-crem1 transition-all realMenu">
+            <!-- <a [routerLink]="['/']"><button class="outline outline-4 outline-choc1 m-2 my-2 p-1 rounded-xl w-4/5 bg-choc2 hover:bg-choc3 transition-all shadow-md shadow-choc1 hover:text-crem1">Inicio</button></a> -->
+            <a [routerLink]="['/menu']"><button class="outline outline-4 outline-choc1 m-2 my-2 p-1 rounded-xl w-4/5 bg-choc2 hover:bg-choc3 transition-all shadow-md shadow-choc1 hover:text-crem1">Menú</button></a>
+            <a href="#footer"><button class="outline outline-4 outline-choc1 m-2 my-2 p-1 rounded-xl w-4/5 bg-choc2 hover:bg-choc3 transition-all shadow-md shadow-choc1 hover:text-crem1">Nosotros</button></a>
+            <a href="/auth/login"><button class="outline outline-4 outline-choc1 m-2 my-2 p-1 rounded-xl w-4/5 bg-choc2 hover:bg-choc3 transition-all shadow-md shadow-choc1 hover:text-crem1">LogIn</button></a>
+            <a href="/menu/create"><button class="outline outline-4 outline-choc1 m-2 my-2 p-1 rounded-xl w-4/5 bg-choc2 hover:bg-choc3 transition-all shadow-md shadow-choc1 hover:text-crem1">Crear</button></a>
         </div>
     </div>
 
     <!-- name/logo -->
     <div class="w-1/3 flex items-center justify-self-center">
         <div class="w-1/5">
-            <img class="rounded-full border-4 border-choc2 bg-choc1 shadow-md shadow-choc1" src="../../../../assets/images/favicon.ico" alt="coffee icon">
+            <a [routerLink]="['/']"><img class="rounded-full border-4 border-choc2 bg-choc1 shadow-md shadow-choc1" src="../../../../assets/images/favicon.ico" alt="coffee icon"></a>
         </div>
         <div class="ml-2">
             <h1 class="text-6xl font-bold text-choc1" id="mainTitle">Café oh lá lá</h1>
@@ -22,14 +29,28 @@
     </div>
 
     <!-- log/reg/welc side -->
-    <div class="w-1/3 flex justify-evenly items-center text-center font-bold text-2xl text-choc1">
+    <div *ngIf="!isLogged" class="w-1/3 flex justify-evenly items-center text-center font-bold text-2xl text-choc1">
         <!-- logIn button -->
         <div class="w-1/2">
-            <button class="outline outline-4 outline-choc2 p-1 rounded-3xl w-3/5 bg-crem4 hover:bg-choc3 transition-all shadow-md shadow-choc1 hover:text-crem1">LogIn</button>
+            <button class="outline outline-4 outline-choc2 p-1 rounded-3xl w-3/5 bg-crem4 hover:bg-choc3 transition-all shadow-md shadow-choc1 hover:text-crem1"><a href="/auth/login">LogIn</a></button>
         </div>
         <!-- register button -->
         <div class="w-1/2">
-            <button class="outline outline-4 outline-choc2 p-1 rounded-3xl w-3/5 bg-crem4 hover:bg-choc3 transition-all shadow-md shadow-choc1 hover:text-crem1">Register</button>
+            <button class="outline outline-4 outline-choc2 p-1 rounded-3xl w-3/5 bg-crem4 hover:bg-choc3 transition-all shadow-md shadow-choc1 hover:text-crem1"><a href="/auth/register">Register</a></button>
+        </div>
+    </div>
+
+    <div *ngIf="isLogged" class="w-1/3 flex justify-evenly items-center text-center font-bold text-2xl text-choc1">
+        <!-- logIn button -->
+        <div class="w-1/2">
+           <h3>Hola {{userName}} !!</h3>
+        </div>
+        <!-- register button -->
+        <div class="w-1/2">
+            <a [routerLink]="['/user/profile']">
+                <button class="outline outline-4 outline-choc2 p-1 rounded-3xl w-3/5 bg-crem4 hover:bg-choc3 transition-all shadow-md shadow-choc1 hover:text-crem1">Perfil</button>
+                <!-- <img src="" alt=""> -->
+            </a>
         </div>
     </div>
 </div>

@@ -1,0 +1,25 @@
+.email:after {
+    content: attr(id);
+    position: absolute;
+    bottom: 1%;
+    left: 1px;
+    background: #4b3024;
+    color: #d1bba4;
+    border-radius: 7px;
+    padding: 2px;
+    border: 1px solid #201310;
+    transition: 0.5s opacity;   
+    /* display: none; */
+    opacity: 0;
+}
+
+.email:hover:after {
+    opacity: 1;
+    transition: 0.5s opacity;   
+    /* display: block; */
+}
+
+.allInfo { 
+    position: absolute;
+    display: none;
+}

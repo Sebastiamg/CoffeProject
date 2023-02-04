@@ -1,5 +1,5 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
@@ -15,7 +15,8 @@ export class LoginComponent {
     "email": '',
     "password": ''
   }
-  
+
+  // find user and login
   loginUser(e: Event) {
     e.preventDefault()
     if(Object.values(this.user).includes("")) {
@@ -26,9 +27,11 @@ export class LoginComponent {
           console.log("Ingresa tus datos nuevamente")
         } else {
           console.log("Logeado correctamente")
-        localStorage.setItem("isLogged", "true")
+          localStorage.setItem("isLogged", "true")
+          localStorage.setItem("userName", (res as any).name)
+          localStorage.setItem("user", JSON.stringify(res))
           setTimeout(() => {
-            this.router.navigate(['/']);
+            window.location.href = "http://localhost:4200/";
           }, 1000);
         }
       })
@@ -36,7 +39,13 @@ export class LoginComponent {
     return
   }
 
+  resetStorage() {
+    localStorage.setItem("isLogged", "false");
+    localStorage.setItem("userName", " ");
+    localStorage.setItem("user", "");
+  }
+
   ngOnInit() {
-    localStorage.setItem("isLogged", "false")
+    this.resetStorage();
   }
 }

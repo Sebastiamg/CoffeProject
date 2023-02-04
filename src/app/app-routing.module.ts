@@ -6,20 +6,25 @@ const routes: Routes = [{
   path: '', 
   component: LayoutComponent,
   children: [
-    // home path
+    // Home path
     {
       path: '',
       loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
     },
-    // auth routing module path
+    // Auth routing module path
     {
       path: 'auth',
       loadChildren: () => import('./modules/auth/auth-routing.module').then(m => m.AuthRoutingModule)
     },
-    // catalog 
+    // catalog module
     {
       path: 'menu',
       loadChildren: () => import('./modules/catalog/catalog.module').then(m => m.CatalogModule)
+    },
+    // User routing module
+    {
+      path: 'user',
+      loadChildren: () => import('./modules/user/user-routing.module').then(m => m.UserRoutingModule)
     }
   ]
 }];
