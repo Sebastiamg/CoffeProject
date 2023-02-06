@@ -104,3 +104,103 @@ a:hover {
 .btn-atras:active {
     background-color: #4b3024;
 }
+
+.logContenedor {
+    /* background: rgb(100,74,57);
+    background: -moz-linear-gradient(0deg, rgba(100,74,57,1) 0%, rgba(32,19,16,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(100,74,57,1) 0%, rgba(32,19,16,1) 100%);
+    background: linear-gradient(0deg, rgba(100,74,57,1) 0%, rgba(32,19,16,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#644a39",endColorstr="#201310",GradientType=1); */
+    background-image: url('https://www.whitsundayescape.com/wp-content/uploads/2016/08/Coffee-Beans-HD-Wallpapers.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media (min-width: 1536px) {
+    .formu-login {
+        width: 450px;
+        height: fit-content;
+        font-size: 30px;
+        background-color: #8a6141;
+        border: 3px solid #201310;
+        margin: 0 auto;
+        padding: 12px;
+        border-radius: 10px;
+        transform: translate(0, 50%);
+    }
+    
+    .formu-register {
+        width: 450px;
+        height: fit-content;
+        font-size: 30px;
+        background-color: #8a6141;
+        border: 3px solid #201310;
+        margin: 0 auto;
+        padding: 12px;
+        border-radius: 10px;
+        transform: translate(0, 35%);
+    }
+    
+    #email, #password, #name {
+        padding: 3px 10px;
+    }
+    
+    .btns {
+        display: flex;
+        width: 100%;
+    }
+    
+    .btn-izquierda {
+        width: 48%;
+    }
+    
+    .btn-derecha {
+        margin-left: 4%;
+        width: 48%;
+    }
+    
+    .btn-login {
+        background-color: #4b3024;
+        border: 2px solid #201310;
+        color: #d1bba4;
+        padding: 2px;
+        border-radius: 8px;
+        margin-top: 10px;
+        width: 100%;
+        cursor: pointer;
+        height: 50px;
+        font-size: 28px;
+    }
+    
+    .btn-login:hover {
+        background-color: #201310;
+        transition: all .3s;
+    }
+    
+    .btn-login:active {
+        background-color: #4b3024;
+    }
+    
+    .btn-atras {
+        background-color: #4b3024;
+        border: 2px solid #201310;
+        color: #d1bba4;
+        padding: 2px;
+        border-radius: 8px;
+        margin-top: 10px;
+        width: 100%;
+        cursor: pointer;
+        height: 50px;
+        font-size: 28px;
+    }
+    
+    .btn-atras:hover {
+        background-color: #201310;
+        transition: all .3s;
+    }
+    
+    .btn-atras:active {
+        background-color: #4b3024;
+    }
+}    

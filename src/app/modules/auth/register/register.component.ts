@@ -41,6 +41,7 @@ export class RegisterComponent {
       return this.authService.createUser(data).subscribe(res => {
         localStorage.setItem("isLogged", "true")
         localStorage.setItem("userName", (res as any).name)
+        localStorage.setItem("user", JSON.stringify(res))
         setTimeout(() => {
           window.location.href = "http://localhost:4200/";
         }, 1000);

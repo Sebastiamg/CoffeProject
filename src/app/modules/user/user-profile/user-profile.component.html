@@ -1,12 +1,12 @@
-<div class="my-10">
+<div class="py-10 w-full 2xl:h-screen flex items-center" id="profileCard">
     <!-- user info -->
-    <div class="border-4 border-choc1 rounded-lg flex flex-nowrap w-3/5 h-full mx-auto">
+    <div class="border-4 border-choc1 rounded-lg flex md:flex-nowrap flex-col md:flex-row md:w-3/5 w-11/12 h-full mx-auto shadow-lg shadow-choc1 2xl:w-6/12 2xl:text-2xl 2xl:h-fit">
 
         <!-- left card -->
-        <div class="flex flex-col w-2/6 h-72 bg-choc3 font-bold">
+        <div class="flex flex-col md:w-4/12 w-full h-80 bg-choc3 font-bold">
             <!-- img -->
             <div class="w-full h-4/6">
-                <img src="{{user.profile.photo}}" class="w-full h-full">
+                <img src="{{user.profile.photo}}" class="md:w-11/12 md:px-5 md:py-2 w-4/6 my-5 md:my-0 rounded-xl md:rounded-3xl m-auto h-full outline outline-4 outline-crem2 md:outline-none">
             </div>
             <!-- status/photo -->
             <div class="w-full h-2/6 flex flex-col items-center">
@@ -16,7 +16,7 @@
         </div>
 
         <!-- mid card -->
-        <div class="flex flex-col justify-evenly w-3/6 pl-5 bg-crem4 font-bold">
+        <div class="flex flex-col justify-evenly md:w-3/6 w-full h-64 md:h-auto pl-5 bg-crem4 font-bold">
             <label class="w-full flex justify-between px-5" for="name">Nombre: <input class="w-4/6 border-2 border-choc1 rounded-md px-2" type="text" name="name" [(ngModel)]="user.name" [disabled]="readonly"></label>
 
             <label class="w-full flex justify-between px-5" for="surname">Apellido: <input class="w-4/6 border-2 border-choc1 rounded-md px-2" type="text" name="surname" [(ngModel)]="user.profile.surname" [disabled]="readonly"></label>
@@ -32,10 +32,10 @@
         </div>
 
         <!-- right card -->
-        <div class="w-1/6 flex flex-col justify-between items-center text-crem1">
-            <button class="font-bold p-2 text-center transition-all bg-choc3 w-full h-full hover:bg-crem3" (click)="readonly = !readonly">🖊️</button>
-            <button class="font-bold p-2 text-center transition-all bg-choc2 w-full h-full hover:bg-crem3" (click)="updateuUserProfile()">Actualizar</button>
-            <button class="font-bold p-2 text-center transition-all bg-choc1 w-full h-full hover:bg-crem3" (click)="deleteUser()">Eliminar perfil</button>
+        <div class="md:w-1/6 w-full flex md:flex-col flex-row justify-between items-center text-crem1">
+            <button class="font-bold p-2 text-center transition-all bg-choc3 w-full md:h-full h-20 hover:bg-crem3" (click)="readonly = !readonly">Editar</button>
+            <button class="font-bold p-2 text-center transition-all bg-choc2 w-full md:h-full h-20 hover:bg-crem3" (click)="updateuUserProfile()">Actualizar</button>
+            <button class="font-bold p-2 text-center transition-all bg-choc1 w-full md:h-full h-20 hover:bg-crem3" (click)="deleteUser()">Eliminar perfil</button>
         </div>
     </div>
 </div>

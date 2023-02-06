@@ -39,7 +39,6 @@ const routes: Routes = [
   }
 ]
 
-
 @NgModule({
   declarations: [CatalogComponent, BreadsComponent, DrinksComponent, DessertsComponent],
   imports: [

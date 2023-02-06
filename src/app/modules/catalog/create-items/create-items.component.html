@@ -1,9 +1,9 @@
-<h1 class="font-bold block text-choc1 text-4xl text-center mb-0">Crear Productos</h1>
+<h1 class="font-bold block text-choc1 text-4xl text-center mb-0 mt-5">Crear Productos</h1>
 
-<div class="flex createItems">
+<div class="flex flex-col md:flex-row createItems">
     <!-- <h1 class="font-bold text-choc1 text-4xl text-center mb-0">Agregar Productos</h1> -->
-    <div class="my-10 w-2/6">
-        <form (submit)="isUpdating ? updateItem($event) : createProduct($event)" class="flex justify-center flex-col w-4/5 mx-auto border-4 border-choc1 rounded-lg font-bold p-2 bg-choc3" id="createForm">
+    <div class="md:my-10 my-5 md:w-2/6 w-full">
+        <form (submit)="isUpdating ? updateItem($event) : createProduct($event)" class="flex justify-center flex-col w-4/5 mx-auto border-4 border-choc1 rounded-lg font-bold p-2 bg-choc3 shadow-lg shadow-choc1" id="createForm">
             <!-- name -->
             <label for="name">Nombre del Producto:</label>
             <input class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" type="text" name="name" [(ngModel)]="productModel.name">
@@ -36,17 +36,17 @@
 
     <!-- all Items -->
 
-    <div class="flex justify-evenly my-10 flex-wrap w-4/6">
+    <div class="flex justify-evenly my-10 flex-wrap md:w-4/6 w-full">
         <!-- ngIf -->
-        <div *ngFor="let item of allProducts" class="w-1/4 h-auto my-5 mx-1 flex flex-col justify-between border-4 border-choc1 rounded-lg font-bold bg-crem1">
-            <h2 class="p-1">Id: <span class="font-normal">{{item.id}}</span></h2>
+        <div *ngFor="let item of allProducts" class="md:w-1/4 w-5/12 mx-1 h-auto my-5 flex flex-col justify-between border-4 border-choc1 rounded-lg font-bold bg-crem1 shadow-md shadow-choc1">
+            <h2 class="p-1 md:block hidden">Id: <span class="font-normal">{{item.id}}</span></h2>
             <h2 class="p-1">Nombre: <span class="font-normal">{{item.name}}</span></h2>
             <h2 class="p-1">Categoría: <span class="font-normal">{{item.category}}</span></h2>
             <h2 class="p-1 h-1/5">Descripción: <span class="font-normal">{{item.description}}</span></h2>
             <h2 class="p-1">Precio: $<span class="font-normal">{{item.price}}</span></h2>
             <h2 class="hidden">Imagen: <span class="font-normal">{{item.image}}</span></h2>
-            <img class="w-5/5 p-1 h-48 mx-auto my-2 rounded-xl" src="{{item.image}}" alt="itemImg">
-            <h2 class="p-1 bg-crem3">Estado: <span class="font-normal">{{item.status}}</span></h2>
+            <img class="w-5/5 p-1 md:h-48 h-32 md:block mx-auto my-2 rounded-xl shadow-md shadow-choc1" src="{{item.image}}" alt="itemImg">
+            <h2>Estado: <span class="font-normal">{{item.status == true ? "Disponible": "No Disponible"}}</span></h2>
             <div class="flex h-10">
                 <button data-id={{item.id}} class="bg-choc3 w-1/2 hover:bg-choc1 hover:text-crem1 transition-all" (click)="fillInputs($event)">Actualizar</button>
                 <button data-id={{item.id}} class="bg-crem4 w-1/2 hover:bg-choc1 hover:text-crem1 transition-all" (click)="deleteItem($event)">Eliminar</button>

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './shared/layout/layout.component';
 
 const routes: Routes = [{
-  path: '', 
+  path: '',
   component: LayoutComponent,
   children: [
     // Home path

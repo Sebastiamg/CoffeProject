@@ -1,22 +1,24 @@
-<div class="my-10 contenido-register">
-    <form (submit)="registerUser($event)" class="formu-register">
-        <label class="" for="name">Name:</label>
-        <input class="" id="name" type="text" name="name" [(ngModel)]="newUser.name">
-        <br>
-        <label class="" for="email">Email:</label>
-        <input class="" id="email" type="email" name="email" [(ngModel)]="newUser.email">
-        <br>
-        <label class="" for="password">Password:</label>
-        <input class="" id="password" type="password" name="password" [(ngModel)]="newUser.password">
-        <br>
-        <input class="font-bold text-lg btn-login" type="submit" value="Register">
-        <div class="links">
-            <a href="/auth/login" class="olvidado">¿Tienes una cuenta?</a>
+<div class="w-full h-screen logContenedor">
+    <div class="my-10 contenido-register">
+        <form (submit)="registerUser($event)" class="shadow-lg shadow-choc1 formu-register">
+            <label class="" for="name">Nombre:</label>
+            <input class="" id="name" type="text" name="name" [(ngModel)]="newUser.name">
             <br>
-            <a href="#" class="no-register">Volver al Inicio</a>
+            <label class="" for="email">Email:</label>
+            <input class="" id="email" type="email" name="email" [(ngModel)]="newUser.email">
             <br>
-        </div>
-    </form>
+            <label class="" for="password">Contraseña:</label>
+            <input class="" id="password" type="password" name="password" [(ngModel)]="newUser.password">
+            <br>
+            <input class="font-bold text-lg btn-login" type="submit" value="Registrarse">
+            <div class="links">
+                <a href="/auth/login" class="olvidado">¿Tienes una cuenta?</a>
+                <br>
+                <a href="#" class="no-register">Volver al Inicio</a>
+                <br>
+            </div>
+        </form>
+    </div>
 </div>
 
 

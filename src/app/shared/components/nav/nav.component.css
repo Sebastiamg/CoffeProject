@@ -14,6 +14,12 @@
 }
 
 #navBar {
+    /* background: rgb(163,125,89);
+    background: linear-gradient(175deg, rgba(163,125,89,1) 0%, rgba(138,97,65,1) 73%, rgba(247,246,242,1) 74%, rgba(255,255,255,1) 100%); */
+
     background: rgb(163,125,89);
-    background: linear-gradient(175deg, rgba(163,125,89,1) 0%, rgba(138,97,65,1) 73%, rgba(247,246,242,1) 74%, rgba(255,255,255,1) 100%);
+    background: -moz-radial-gradient(circle, rgba(163,125,89,1) 52%, rgba(121,84,60,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(163,125,89,1) 52%, rgba(121,84,60,1) 100%);
+    background: radial-gradient(circle, rgba(163,125,89,1) 52%, rgba(121,84,60,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a37d59",endColorstr="#79543c",GradientType=1);
 }

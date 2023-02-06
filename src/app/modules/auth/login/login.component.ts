@@ -1,4 +1,3 @@
-import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';

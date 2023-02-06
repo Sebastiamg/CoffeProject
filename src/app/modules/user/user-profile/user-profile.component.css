@@ -1,0 +1,9 @@
+#profileCard {
+    background: linear-gradient(#fae3c6, #d3ae88);
+}
+
+@media (min-width: 1536px) {
+    #profileCard {
+        height: 70vmin;
+    }
+}

@@ -14,7 +14,12 @@ export class CreateUsersComponent {
   // get all users from db
   getAllUsers() {
     return this.userservice.getAllUsers().subscribe(res => {
-      Object.values(res).forEach(user => this.users.push(user))
+      console.log(res)
+        const myUser = JSON.parse(localStorage.getItem("user")!);
+      console.log(myUser.id)
+      Object.values(res).filter(x => x.id != myUser.id).forEach(user => this.users.push(user))
+      
+
     })
   }
 

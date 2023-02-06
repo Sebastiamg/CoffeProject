@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 import { UserService } from '../service/user.service';
+
+
+
 
 @Component({
   selector: 'app-user-profile',
@@ -49,27 +53,67 @@ export class UserProfileComponent {
   }
 
   // delete user
-  deleteUser() {
-    const userId = this.user.id;
-    const deleteConfirmation = confirm("Seguro");
+  // deleteUser() {
+  //   const userId = this.user.id;
+  //   const deleteConfirmation = confirm("Seguro");
 
-    if (deleteConfirmation) {
-      console.log("Eliminando usruario...")
-      return this.userService.deleteUser(userId).subscribe(res => {
-        console.log(res)
-        this.resetStorage();
-        window.location.href = "http://localhost:4200/auth/login";
-      });
-    } else {
-      return console.log(false)
-    }
-  }
+  //   if (deleteConfirmation) {
+  //     console.log("Eliminando usruario#79543c")
+  //     return this.userService.deleteUser(userId).subscribe(res => {
+  //       console.log(res)
+  //       this.resetStorage();
+  //       window.location.href = "http://localhost:4200/auth/login";
+  //     });
+
+
+  //   } else {
+  //     return console.log(false)
+  //   }
+  // }
 
   resetStorage() {
     localStorage.setItem("isLogged", "false");
     localStorage.setItem("userName", " ");
     localStorage.setItem("user", "");
+  };
+
+  deleteUser() {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "Se eliminará el tu cuenta permanentemente",
+      icon: 'warning',
+      customClass: {
+        icon: 'bg-black'
+      },
+      showCancelButton: true,
+      confirmButtonColor: '#79543c',
+      cancelButtonColor: '#4b3024',
+      confirmButtonText: 'Si, eliminar',
+      cancelButtonText: 'Cancelar',
+      
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Borrado exitosamente',
+          'Tu cuenta ha sido eliminada correctamente',
+          'success',
+        )
+      const userId = this.user.id;
+        
+      console.log("Eliminando usruario")
+        setTimeout(() => {
+          this.userService.deleteUser(userId).subscribe(res => {
+            console.log(res)
+            this.resetStorage();
+            window.location.href = "http://localhost:4200/auth/login";
+          });
+        }, 3000);
+        
+      }
+    })
   }
+
+
 
   ngOnInit() {
     this.getUserfromStorage()

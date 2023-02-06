@@ -6,14 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { UserProfileModule } from './user-profile/user-profile.module';
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     UserRoutingModule,
-    CreateUsersModule,
     FormsModule,
-    UserProfileModule
+    //create user module
+    CreateUsersModule, 
+
+    //user profile module
+    UserProfileModule 
   ]
 })
 export class UserModule { }

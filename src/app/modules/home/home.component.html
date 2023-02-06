@@ -2,18 +2,18 @@
     <!-- home screen -->
     <div class="w-full flex h-screen text-choc1 bgContainer">
         <!-- home left -->
-            <div class="w-1/2 h-screen flex flex-col place-content-start">
+            <div class="md:w-1/2 w-full h-screen flex flex-col">
                 <!-- phrase -->
-                <div class="w-4/5 text-7xl text-start font-bold mx-auto my-16">
+                <div class="md:w-4/5 text-7xl 2xl:text-9xl md:text-start text-center font-bold mx-auto my-16">
                     <span>Comierza tu día con un café negro</span>
                 </div>
                 <!-- buy now button -->
-                <div class="w-4/5 font-bold text-2xl mx-auto" id="buyNow">
-                    <button class="border-4 border-choc2 p-1 rounded-3xl w-2/5 bg-crem4 hover:bg-choc3 transition-all shadow-md shadow-choc1" (click)="scrollDown()">Comprar Ahora</button>
+                <div class="md:w-4/5 w-full font-bold text-2xl mx-auto flex justify-center md:justify-start 2xl:text-5xl" id="buyNow">
+                    <button class="border-4 border-choc2 p-1 rounded-3xl md:w-2/5 w-4/5 bg-crem4 hover:bg-choc3 transition-all shadow-md shadow-choc1 2xl:p-3" (click)="scrollDown()">Comprar Ahora</button>
                 </div>  
-        </div>
+            </div>
         <!-- home right -->
-        <div class="w-1/2">
+        <div class="w-1/2 hidden md:block">
             <div class="relative w-4/5 h-4/5 overflow-hidden">
                 <img class="absolute -top-32" src="../../../assets/images/coffeeCoup.png" alt="coffeeCoup">
             </div>
@@ -23,34 +23,31 @@
     <div>
         <app-slider></app-slider>
     </div>
-    <div class="flex w-full pb-60 justify-center">
+    <div class="flex w-full flex-wrap md:pb-60 mt-20 md:mt-0 flex-col md:flex-row justify-center items-center md:items-stretch">
 
         <div class="contenedor-item">
-            <p class="text-center text-4xl text-crema mb-10">Bebidas</p>
             <img id="cat" src="https://github.com/Joel7Anthony/CAFE-OH-LA-LA/blob/main/CafeOhLaLa/src/assets/img/drink/cafelate.jpg?raw=true" alt="" class="contenedor-img">
             <div class="contenedor-text">
                 <div class="izquierda-contenedor-text">
-                    <a [routerLink]="['/menu/drinks']" class="title"><h2 class="title">Ver</h2></a>
+                    <a [routerLink]="['/menu/drinks']" class="title"><h2 class="title">Bebidas</h2></a>
                 </div>
             </div>
         </div>
   
         <div class="contenedor-item">
-            <p class="text-center text-4xl text-crema mb-10 ">Panes</p>
             <img id="cat" src="https://github.com/Joel7Anthony/CAFE-OH-LA-LA/blob/main/CafeOhLaLa/src/assets/img/bread/pan.jpg?raw=true" alt="" class="contenedor-img">
             <div class="contenedor-text">
                 <div class="izquierda-contenedor-text">
-                    <a [routerLink]="['/menu/breads']"><h2 class="title">Ver</h2></a>
+                    <a [routerLink]="['/menu/breads']"><h2 class="title">Panes</h2></a>
                 </div>
             </div>
         </div>
   
         <div class="contenedor-item">
-            <p class="text-center text-4xl text-crema mb-10 ">Postres</p>
             <img id="cat" src="https://github.com/Joel7Anthony/CAFE-OH-LA-LA/blob/main/CafeOhLaLa/src/assets/img/postre5.jpg?raw=true" alt="" class="contenedor-img">
             <div class="contenedor-text">
                 <div class="izquierda-contenedor-text">
-                    <a [routerLink]="['/menu/desserts']"><h2 class="title">Ver</h2></a>
+                    <a [routerLink]="['/menu/desserts']"><h2 class="title">Postres</h2></a>
                 </div>
             </div>
         </div>
