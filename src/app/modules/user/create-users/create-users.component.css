@@ -23,3 +23,7 @@
     position: absolute;
     display: none;
 }
+
+.createUser {
+    background: linear-gradient(#fae3c6, #d3ae88);
+}

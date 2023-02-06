@@ -22,4 +22,5 @@
     background: -webkit-radial-gradient(circle, rgba(163,125,89,1) 52%, rgba(121,84,60,1) 100%);
     background: radial-gradient(circle, rgba(163,125,89,1) 52%, rgba(121,84,60,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a37d59",endColorstr="#79543c",GradientType=1);
+
 }

@@ -1,6 +1,7 @@
 .Catalog{ 
   /* background: rgb(209,187,164); */
   /* background: linear-gradient(180deg, rgba(209,187,164,1) 0%, rgba(163,125,89,1) 100%); */
+  background: linear-gradient(#fae3c6, #d3ae88);
 
 } 
 
@@ -101,4 +102,15 @@
     transform: translateY(0px);
     transition-delay: 0.6s;
     opacity: 1;
+  }
+
+  h1 {
+    box-shadow: 5px 5px 15px black;
+    margin-bottom: 25px;
+
+    background: rgb(184,154,125);
+    background: -moz-radial-gradient(circle, rgba(184,154,125,1) 59%, rgba(209,187,164,1) 99%);
+    background: -webkit-radial-gradient(circle, rgba(184,154,125,1) 59%, rgba(209,187,164,1) 99%);
+    background: radial-gradient(circle, rgba(184,154,125,1) 59%, rgba(209,187,164,1) 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b89a7d",endColorstr="#d1bba4",GradientType=1);
   }

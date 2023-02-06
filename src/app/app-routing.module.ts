@@ -11,11 +11,27 @@ const routes: Routes = [{
       path: '',
       loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
     },
+
+
+
+
+
     // Auth routing module path
     {
       path: 'auth',
       loadChildren: () => import('./modules/auth/auth-routing.module').then(m => m.AuthRoutingModule)
     },
+
+
+
+
+
+
+
+
+
+
+
     // catalog module
     {
       path: 'menu',

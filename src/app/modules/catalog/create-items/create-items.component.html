@@ -1,55 +1,57 @@
-<h1 class="font-bold block text-choc1 text-4xl text-center mb-0 mt-5">Crear Productos</h1>
+<div class="createItems">
+    <h1 class="font-bold block text-choc1 text-4xl 2xl:text-6xl md:py-10 text-center mb-0">Crear Productos</h1>
 
-<div class="flex flex-col md:flex-row createItems">
-    <!-- <h1 class="font-bold text-choc1 text-4xl text-center mb-0">Agregar Productos</h1> -->
-    <div class="md:my-10 my-5 md:w-2/6 w-full">
-        <form (submit)="isUpdating ? updateItem($event) : createProduct($event)" class="flex justify-center flex-col w-4/5 mx-auto border-4 border-choc1 rounded-lg font-bold p-2 bg-choc3 shadow-lg shadow-choc1" id="createForm">
-            <!-- name -->
-            <label for="name">Nombre del Producto:</label>
-            <input class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" type="text" name="name" [(ngModel)]="productModel.name">
-            
-            <!-- category -->
-            <label for="category">Categoria:</label>
-            <select class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" type="text" name="category" [(ngModel)]="productModel.category">
-                <!-- category options -->
-                <option class="font-bold text-choc1" value="" selected></option>
-                <option class="font-bold text-choc1" value="bebidas">Bebidas</option>
-                <option class="font-bold text-choc1" value="pan">Pan</option>
-                <option class="font-bold text-choc1" value="postres">Postres</option>
-            </select>
-    
-            <!-- description -->
-            <label for="desscription">Descripción:</label>
-            <textarea class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none h-14" type="text" name="desscription" [(ngModel)]="productModel.description"></textarea>
-    
-            <!-- price -->
-            <label for="price">Precio:</label>
-            <input class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" name="price" pattern="^\d*(\.\d{0,2})?$" [(ngModel)]="productModel.price">
-    
-            <!-- image -->
-            <label for="image">Imagen:</label>
-            <textarea class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none h-14" type="text" name="image" [(ngModel)]="productModel.image"></textarea>
-    
-            <button class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-choc2 text-crem1 hover:bg-choc1 transition-all" type="submit" >Crear Producto</button>
-        </form>
-    </div>
+    <div class="flex flex-col md:flex-row 2xl:text-2xl">
+        <!-- <h1 class="font-bold text-choc1 text-4xl text-center mb-0">Agregar Productos</h1> -->
+        <div class="md:my-10 my-5 md:w-2/6 w-full">
+            <form (submit)="isUpdating ? updateItem($event) : createProduct($event)" class="flex justify-center flex-col w-4/5 mx-auto border-4 border-choc1 rounded-lg font-bold p-2 bg-choc3 shadow-lg shadow-choc1" id="createForm">
+                <!-- name -->
+                <label for="name">Nombre del Producto:</label>
+                <input class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" type="text" name="name" [(ngModel)]="productModel.name">
+                
+                <!-- category -->
+                <label for="category">Categoria:</label>
+                <select class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" type="text" name="category" [(ngModel)]="productModel.category">
+                    <!-- category options -->
+                    <option class="font-bold text-choc1" value="" selected></option>
+                    <option class="font-bold text-choc1" value="bebidas">Bebidas</option>
+                    <option class="font-bold text-choc1" value="pan">Pan</option>
+                    <option class="font-bold text-choc1" value="postres">Postres</option>
+                </select>
+        
+                <!-- description -->
+                <label for="desscription">Descripción:</label>
+                <textarea class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none h-14" type="text" name="desscription" [(ngModel)]="productModel.description"></textarea>
+        
+                <!-- price -->
+                <label for="price">Precio:</label>
+                <input class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none" name="price" pattern="^\d*(\.\d{0,2})?$" [(ngModel)]="productModel.price">
+        
+                <!-- image -->
+                <label for="image">Imagen:</label>
+                <textarea class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-crem1 outline-none h-14" type="text" name="image" [(ngModel)]="productModel.image"></textarea>
+        
+                <button class="border-2 border-choc1 rounded-lg px-2 mb-3 bg-choc2 text-crem1 hover:bg-choc1 transition-all 2xl:text-3xl" type="submit" >Crear Producto</button>
+            </form>
+        </div>
 
-    <!-- all Items -->
+        <!-- all Items -->
 
-    <div class="flex justify-evenly my-10 flex-wrap md:w-4/6 w-full">
-        <!-- ngIf -->
-        <div *ngFor="let item of allProducts" class="md:w-1/4 w-5/12 mx-1 h-auto my-5 flex flex-col justify-between border-4 border-choc1 rounded-lg font-bold bg-crem1 shadow-md shadow-choc1">
-            <h2 class="p-1 md:block hidden">Id: <span class="font-normal">{{item.id}}</span></h2>
-            <h2 class="p-1">Nombre: <span class="font-normal">{{item.name}}</span></h2>
-            <h2 class="p-1">Categoría: <span class="font-normal">{{item.category}}</span></h2>
-            <h2 class="p-1 h-1/5">Descripción: <span class="font-normal">{{item.description}}</span></h2>
-            <h2 class="p-1">Precio: $<span class="font-normal">{{item.price}}</span></h2>
-            <h2 class="hidden">Imagen: <span class="font-normal">{{item.image}}</span></h2>
-            <img class="w-5/5 p-1 md:h-48 h-32 md:block mx-auto my-2 rounded-xl shadow-md shadow-choc1" src="{{item.image}}" alt="itemImg">
-            <h2>Estado: <span class="font-normal">{{item.status == true ? "Disponible": "No Disponible"}}</span></h2>
-            <div class="flex h-10">
-                <button data-id={{item.id}} class="bg-choc3 w-1/2 hover:bg-choc1 hover:text-crem1 transition-all" (click)="fillInputs($event)">Actualizar</button>
-                <button data-id={{item.id}} class="bg-crem4 w-1/2 hover:bg-choc1 hover:text-crem1 transition-all" (click)="deleteItem($event)">Eliminar</button>
+        <div class="flex justify-evenly my-10 flex-wrap md:w-4/6 w-full">
+            <!-- ngIf -->
+            <div *ngFor="let item of allProducts" class="md:w-1/4 w-5/12 2xl:w-3/12 mx-1 my-5 flex flex-col justify-between border-4 border-choc1 rounded-lg font-bold bg-crem1 shadow-md shadow-choc1">
+                <h2 class="p-1 md:block hidden">Id: <span class="font-normal">{{item.id}}</span></h2>
+                <h2 class="p-1">Nombre: <span class="font-normal">{{item.name}}</span></h2>
+                <h2 class="p-1">Categoría: <span class="font-normal">{{item.category}}</span></h2>
+                <h2 class="p-1 h-1/5">Descripción: <span class="font-normal">{{item.description}}</span></h2>
+                <h2 class="p-1">Precio: $<span class="font-normal">{{item.price}}</span></h2>
+                <h2 class="hidden">Imagen: <span class="font-normal">{{item.image}}</span></h2>
+                <img class="w-5/5 p-1 md:h-48 h-32 md:block mx-auto my-2 rounded-xl shadow-md shadow-choc1" src="{{item.image}}" alt="itemImg">
+                <h2>Estado: <span class="font-normal">{{item.status == true ? "Disponible": "No Disponible"}}</span></h2>
+                <div class="flex h-10 2xl:h-14">
+                    <button data-id={{item.id}} class="bg-choc3 w-1/2 hover:bg-choc1 hover:text-crem1 transition-all 2xl:h-full" (click)="fillInputs($event)">Actualizar</button>
+                    <button data-id={{item.id}} class="bg-crem4 w-1/2 hover:bg-choc1 hover:text-crem1 transition-all 2xl:h-full" (click)="deleteItem($event)">Eliminar</button>
+                </div>
             </div>
         </div>
     </div>
