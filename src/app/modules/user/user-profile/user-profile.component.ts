@@ -3,8 +3,6 @@ import Swal from 'sweetalert2';
 import { UserService } from '../service/user.service';
 
 
-
-
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',

@@ -17,13 +17,31 @@ export class LoginComponent {
 
   // find user and login
   loginUser(e: Event) {
+    const p = document.createElement("p");
+    p.classList.add("text-center");
+
     e.preventDefault()
     if(Object.values(this.user).includes("")) {
+      p.textContent = "Llena todos los campos";
+      p.classList.add("text-slate-800", "font-bold", "py-2")
+
+      document.querySelector("#password")?.insertAdjacentElement("afterend", p);
+      setTimeout(() => {
+        p.remove()
+      }, 1500);
       return console.log("llena todos los campos")
     } else {
       return this.authService.getUser(this.user).subscribe( res => {
+        console.log(res)
         if (res === null) {
-          console.log("Ingresa tus datos nuevamente")
+          console.log("Ingresa tus datos nuevamente");
+          p.textContent = "Ingresa datos válidos";
+          p.classList.add("text-slate-800", "font-bold", "py-2", "text-choc1")
+    
+          document.querySelector("#password")?.insertAdjacentElement("afterend", p);
+          setTimeout(() => {
+            p.remove()
+          }, 1500);
         } else {
           console.log("Logeado correctamente")
           localStorage.setItem("isLogged", "true")

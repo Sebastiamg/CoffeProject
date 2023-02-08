@@ -12,31 +12,18 @@ const routes: Routes = [{
       loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
     },
 
-
-
-
-
     // Auth routing module path
     {
       path: 'auth',
       loadChildren: () => import('./modules/auth/auth-routing.module').then(m => m.AuthRoutingModule)
     },
 
-
-
-
-
-
-
-
-
-
-
     // catalog module
     {
       path: 'menu',
       loadChildren: () => import('./modules/catalog/catalog.module').then(m => m.CatalogModule)
     },
+    
     // User routing module
     {
       path: 'user',

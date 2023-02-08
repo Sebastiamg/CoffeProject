@@ -70,7 +70,7 @@ export class CreateItemsComponent {
     console.log(itemId)
     this.allProducts = this.allProducts.filter(x => x.id !== itemId)
     return this.productService.deleteProduct(itemId).subscribe(res => {
-      console.log(res)
+      console.log(res);
     })
   }
 
@@ -123,7 +123,6 @@ export class CreateItemsComponent {
         return console.log("llena todo bien para actualziar")
       } else { 
         return this.productService.updateProduct(uptId, this.newUpdateItem).subscribe(res => {
-          console.log(res);
           this.getAllItems();
           (e.target as HTMLFormElement).reset();
         })

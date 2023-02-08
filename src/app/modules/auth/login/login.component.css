@@ -1,17 +1,22 @@
 .formu-login {
     width: 250px;
-    height: 240px;
+    height: fit-content;
+    /* height: 300px; */
     background-color: #8a6141;
     border: 3px solid #201310;
     margin: 0 auto;
     padding: 12px;
     border-radius: 10px;
     transform: translate(0, 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .formu-register {
     width: 250px;
     height: 295px;
+    height: fit-content;
     background-color: #8a6141;
     border: 3px solid #201310;
     margin: 0 auto;
